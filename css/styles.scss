@@ -19,24 +19,37 @@ html{
 
 header{
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto;
     align-items: center;
     box-shadow: 0 4px 2px -2px rgb(0 0 0 / 20%);
-    .header_input_vacio-mobile,.header_contenido_vacio-mobile{
+    .header_input_vacio-mobile{
         display:none;
     }
     img{
-        width: 45%;
+        width: 35%;
     }
     .header-titulo{
+        display:inline-flex;
         padding-left: 15px;
+        span{
+            
+            vertical-align:top;
+            padding-top: 2%;
+            font-size: .6rem;
+        }
+    }
+    .header_contenido_vacio-mobile{
+        text-align:right;
+        img{
+            width:25px;
+        }
     }
     .header-gmail{
         text-align: right;
         padding-right: 15%;
         img{
             border-radius: 40px;
-            width:35%;
+            width:30px;
         }
     }
 }
@@ -85,7 +98,7 @@ main{
             background-size: cover;
             margin: 0 auto;
             height:250px;
-            max-width: 400px;
+            max-width: 450px;
             .interno-imagen{
                 display:flex;
                 justify-content: center;
@@ -105,7 +118,7 @@ main{
         display:grid;
         grid-template-columns: 90% auto;
         align-items:center;
-        max-width: 400px;
+        max-width: 450px;
         margin: 0 auto;
         padding-top: 10px;
         .interno_videos1{
@@ -122,7 +135,7 @@ main{
         }
     }
     .section_2do-video{
-        padding-top: 25px;
+        padding-top: 20px;
         .imagen2{
             background-image: url(../asstes/imagenes/segundo.webp);
             background-repeat:no-repeat;
@@ -136,10 +149,10 @@ main{
             display:grid;
             grid-template-columns: 20% 76% 4%;
             align-items:center;
-            max-width: 400px;
+            max-width: 450px;
             margin: 0 auto;
             padding-top: 10px;
-            padding-bottom: 50px;
+            padding-bottom: 20px;
             .div_falcon{
                 margin: 5px auto;
                 .falcon-img{
@@ -162,9 +175,104 @@ main{
     }
     .section_3do-video{
         @extend .section_2do-video;
+        padding-top: 0px;
         .imagen3{
             @extend .imagen2;
-            background-image:url(../)
+            background-image:url(../asstes/imagenes/tercero.webp);
+        }
+        .interno-sectionVideos3{
+            @extend .interno-sectionVideos2;
+        }
+        .div33{
+            @extend .div_falcon;
+            img{
+                @extend .falcon-img;
+            }
+        }
+        .interno_videos3-1{
+            @extend .interno_videos2-1;
+        }
+        .ultimo2{
+            @extend .ultimo;
+            .puntos2{
+                @extend .puntos1;
+            }
+        }
+    }
+    .section_4do-video{
+        @extend .section_2do-video;
+        .imagen4{
+            @extend .imagen2;
+            background-image:url(../asstes/imagenes/cuarto.jpg);
+        }
+        .interno-sectionVideos4{
+            @extend .interno-sectionVideos2;
+        }
+        .div44{
+            @extend .div_falcon;
+            img{
+                @extend .falcon-img;
+            }
+        }
+        .interno_videos4-1{
+            @extend .interno_videos2-1;
+        }
+        .ultimo4{
+            @extend .ultimo;
+            .puntos4{
+                width: 5px;
+            }
+        }
+    }
+    .section_5do-video{
+        @extend .section_2do-video;
+        .imagen5{
+            @extend .imagen2;
+            background-image:url(../asstes/imagenes/quinto.webp);
+        }
+        .interno-sectionVideos5{
+            @extend .interno-sectionVideos2;
+        }
+        .div55{
+            @extend .div_falcon;
+            img{
+                @extend .falcon-img;
+            }
+        }
+        .interno_videos5-1{
+            @extend .interno_videos2-1;
+        }
+        .ultimo5{
+            @extend .ultimo;
+            .puntos5{
+                width: 5px;
+            }
+        }
+    }
+    .section_6do-video{
+        @extend .section_2do-video;
+        padding-bottom: 50px;
+        .imagen6{
+            @extend .imagen2;
+            background-image:url(../asstes/imagenes/sexto.webp);
+        }
+        .interno-sectionVideos6{
+            @extend .interno-sectionVideos2;
+        }
+        .div66{
+            @extend .div_falcon;
+            img{
+                @extend .falcon-img;
+            }
+        }
+        .interno_videos6-1{
+            @extend .interno_videos2-1;
+        }
+        .ultimo6{
+            @extend .ultimo;
+            .puntos6{
+                width: 5px;
+            }
         }
     }
 }
@@ -189,6 +297,99 @@ footer{
         p{
 
             font-size: .8rem;
+
+        }
+    }
+}
+
+@media(min-width:375px){
+    main{
+        .section-inicio-videos{
+            .imagen1{
+                height:280px;
+                .interno-imagen{
+                    top:254px;
+                }
+            }
+        }
+        .section_2do-video{
+            .imagen2{
+                height:300px;
+            max-width: 450px;
+            }
+        }
+    }
+}
+@media(min-width:550px){
+    main{
+        .big_container{
+            display:grid;
+            grid-template-columns: 47.5% 47.5%;
+            justify-content: center;
+            gap:8px;
+        }
+        .section-inicio-videos{
+            .imagen1{
+                max-width: 330px;
+                height:200px;
+                .interno-imagen{
+                    top:174px;
+                }
+            }
+        }
+        .section_2do-video{
+            .imagen2{
+                max-width: 330px;
+                height:200px;
+            }
+        }
+        .section_4do-video{
+            padding-top: 0px;
+        }
+    }
+}
+
+
+
+
+
+
+
+@media(min-width: 640px){
+    header{
+        .header-titulo{
+            width:260px;
+            span{
+                padding-top: 8px;
+            }
+        }
+        .header-gmail{
+            img{
+                width: 35px;
+                height:35px;
+            }
+        }
+    }
+    main{
+        .section-inicio-videos{
+            .imagen1{
+                height:240px;
+                .interno-imagen{
+                    top:214px;
+                }
+            }
+            .interno-sectionVideos{
+                max-width:330px;
+            }
+        }
+        .section_2do-video{
+            .imagen2{
+                max-width: 330px;
+                height:240px;
+            }
+            .interno-sectionVideos2{
+                max-width: 325px;
+            }
         }
     }
 }
