@@ -1,0 +1,194 @@
+$color-principal: #fff;
+$color-opcion:gray;
+$color-secundario:black;
+$color-suave: #EEEFF0;
+$gris-suave: #D1D2D3;
+
+
+
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing:border-box; 
+}
+html{
+    font-size:1rem;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+header{
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    box-shadow: 0 4px 2px -2px rgb(0 0 0 / 20%);
+    .header_input_vacio-mobile,.header_contenido_vacio-mobile{
+        display:none;
+    }
+    img{
+        width: 45%;
+    }
+    .header-titulo{
+        padding-left: 15px;
+    }
+    .header-gmail{
+        text-align: right;
+        padding-right: 15%;
+        img{
+            border-radius: 40px;
+            width:35%;
+        }
+    }
+}
+
+
+
+
+main{
+    padding-top: 15px;
+    img{
+        width:100%;
+    }
+    .main_div-listaVertical{
+        ul{
+            overflow-x:auto;
+            overflow-y: hidden;
+            height: 50px;
+            white-space:nowrap;
+            padding-left: 15px;
+            padding-right: 15px;
+            li{
+                width:135px;
+                display:inline-block;
+                text-align:center;
+                padding:6px;
+                border: 1px solid $gris-suave;
+                background-color: $color-suave;
+                border-radius:25px;
+
+            }
+            .li-cortos{
+                width:77px;
+            }
+
+            li:active{
+                background-color: $color-opcion;
+                color:$color-principal;
+            }
+        }
+    }
+    .section-inicio-videos{
+        padding-top: 20px;
+        .imagen1{
+            background-image: url(../asstes/imagenes/primero.png);
+            background-repeat:no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+            height:250px;
+            max-width: 400px;
+            .interno-imagen{
+                display:flex;
+                justify-content: center;
+                align-items: flex-end;
+                background-color:rgba(89, 64, 55, 0.8); 
+                position: relative;
+                top:224px;
+                height:25px;
+                img{
+                    width:20px;
+                    margin-top: 50%;
+                }
+            }
+        }
+    }
+    .interno-sectionVideos{
+        display:grid;
+        grid-template-columns: 90% auto;
+        align-items:center;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-top: 10px;
+        .interno_videos1{
+            text-align:left;
+            padding-left: 12px;
+            font-size: .8rem;
+            line-height: 1.5rem;
+            .p2{
+                opacity: .75;
+            }
+        }
+        .interno_videos2{
+            width:6px;
+        }
+    }
+    .section_2do-video{
+        padding-top: 25px;
+        .imagen2{
+            background-image: url(../asstes/imagenes/segundo.webp);
+            background-repeat:no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+            height:250px;
+            max-width: 400px;
+
+        }
+        .interno-sectionVideos2{
+            display:grid;
+            grid-template-columns: 20% 76% 4%;
+            align-items:center;
+            max-width: 400px;
+            margin: 0 auto;
+            padding-top: 10px;
+            padding-bottom: 50px;
+            .div_falcon{
+                margin: 5px auto;
+                .falcon-img{
+                    width:45px;
+                    border-radius:50%;
+                }
+            }
+            .interno_videos2-1{
+                width: 90%;
+                margin: 0 auto;
+                font-size: .75rem;
+                line-height: 1rem;
+            }
+            .ultimo{
+                .puntos1{
+                    width:5px;
+                }
+            }
+        }
+    }
+    .section_3do-video{
+        @extend .section_2do-video;
+        .imagen3{
+            @extend .imagen2;
+            background-image:url(../)
+        }
+    }
+}
+
+
+footer{
+    display:flex;
+    width:100%;
+    position:fixed;
+    bottom:0;
+    z-index: 2;
+    background: hsla(0,0%,100%,0.98);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    div{
+        width: 25%;
+        text-align: center;
+        padding-bottom: 2px;
+        img{
+            width:25%;
+            height: 30px;
+        }
+        p{
+
+            font-size: .8rem;
+        }
+    }
+}
