@@ -26,7 +26,7 @@ header{
         display:none;
     }
     img{
-        width: 35%;
+        width: 30%;
     }
     .header-titulo{
         display:inline-flex;
@@ -38,18 +38,25 @@ header{
             font-size: .6rem;
         }
     }
+    .header_iconos-pc{
+        display:none;
+    }
     .header_contenido_vacio-mobile{
         text-align:right;
+        #texto_header{
+            display: none;
+        }
+        
         img{
-            width:25px;
+            width:20px;
         }
     }
     .header-gmail{
         text-align: right;
-        padding-right: 15%;
+        padding-right: 10px;
         img{
             border-radius: 40px;
-            width:30px;
+            width:25px;
         }
     }
 }
@@ -62,6 +69,11 @@ main{
     img{
         width:100%;
     }
+    .main_father-big_container{
+        .main_father_interno1{
+            display: none;
+        }
+    }
     .main_div-listaVertical{
         ul{
             overflow-x:auto;
@@ -70,6 +82,8 @@ main{
             white-space:nowrap;
             padding-left: 15px;
             padding-right: 15px;
+            scrollbar-width: none;
+            
             li{
                 width:135px;
                 display:inline-block;
@@ -330,7 +344,7 @@ footer{
         }
         .section-inicio-videos{
             .imagen1{
-                max-width: 330px;
+                max-width: 315px;
                 height:200px;
                 .interno-imagen{
                     top:174px;
@@ -357,16 +371,22 @@ footer{
 
 @media(min-width: 640px){
     header{
-        .header-titulo{
-            width:260px;
-            span{
-                padding-top: 8px;
+        .header_contenido_vacio-mobile{
+            display: inline-flex;
+            justify-content: space-between;
+            padding: 4px;
+            border: .7px solid black;
+            border-radius: 4px;
+            #texto_header{
+                display: block;
+                outline: none;
+                border: none;
+                padding-left: 3px;
             }
-        }
-        .header-gmail{
-            img{
-                width: 35px;
-                height:35px;
+            span{
+                .search{
+                    width: 15px;
+                }
             }
         }
     }
@@ -379,16 +399,98 @@ footer{
                 }
             }
             .interno-sectionVideos{
-                max-width:330px;
+                max-width:310px;
             }
         }
         .section_2do-video{
             .imagen2{
-                max-width: 330px;
+                max-width: 315px;
                 height:240px;
             }
             .interno-sectionVideos2{
-                max-width: 325px;
+                max-width: 300px;
+            }
+        }
+    }
+}
+@media(min-width: 840px){
+    *{
+        background-color: #D9DDDE;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+        grid-template-columns: 45% 25% auto 5%;
+        z-index:999;
+        border-bottom: 3px solid black;
+        .header-titulo{
+            img{
+                filter:brightness(.85);
+            }
+        }
+        .header_iconos-pc{
+            display:grid;
+            grid-template-columns:33% 33% 33%;
+            justify-content: space-around;
+            .containers2,.containers3,.containers4{
+                text-align: center;
+                .s2,.s3,.s4{
+                    width: 23px;
+                }
+            }
+        }
+    }
+    main{
+        .main_div-listaVertical{
+            position:fixed;
+            width: 100%;
+            z-index: 999;
+            margin-top:5.5%;
+            padding-top: 10px;
+        }
+        .main_father-big_container{
+            .main_father_interno1{
+                display:flex;
+                flex-direction: column;
+                width:18%;
+                position:fixed;
+                left:0;
+                z-index: 2;
+                margin-top:15%;
+                border-right: 1px solid rgba(0,0,0,0.1);
+                div{
+                    margin-bottom: 50px;
+                    text-align: center;
+                    padding-bottom: 2px;
+                    img{
+                        width:22%;
+                        height: 27px;
+                    }
+                    p{
+                        padding-top:5px;
+                        font-size: 1rem;
+
+                    }
+                }
+            }
+        }
+        .big_container{
+            max-width: 80%;
+            margin-left: auto;
+            padding-top: 150px;
+        }
+    }
+    footer{
+        display:none;
+    }
+}
+@media(min-width:1180px){
+    main{
+        .big_container{
+            grid-template-columns: auto auto auto;
+            gap:15px;
+            .section_3do-video,.section_4do-video{
+                padding-top:20px;
             }
         }
     }
